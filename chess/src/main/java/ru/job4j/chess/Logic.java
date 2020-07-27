@@ -30,8 +30,17 @@ public class Logic {
         figures[index] = figures[index].copy(dest);
     }
 
-    private boolean isFree(Cell[] steps) {
-        return true;
+    private boolean isFree(Cell[] steps)  {
+        boolean rsl = true;
+        for (Cell a:
+             steps) {
+            try {
+                findBy(a);
+                rsl = false;
+            } catch (FigureNotFoundException e) {}
+
+        }
+        return rsl;
     }
 
     public void clean() {
